@@ -231,22 +231,10 @@ class IMCDataSource {
     suspend fun fetchMonsters() : Result<List<MonsterData>> {
 
       val monsters = GlobalScope.async {
-            val service = Retrofit.Builder()
-                .baseUrl("https://mhw-db.com/")
-                .addConverterFactory(MoshiConverterFactory.create())
-                .build()
-                .create(MonsterService::class.java)
-
-                return@async service.fetchMonsters()
+          return@async Api.buildService().fetchMonsters()
             }
 
         return Result.Success( monsters.await())
     }
 }
 
-interface MonsterService {
-    @GET("/monsters")
-    suspend fun fetchMonsters(): List<MonsterData>
-}
-
-data class MonsterResponse(val result: MonsterData)
