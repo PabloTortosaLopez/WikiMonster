@@ -1,6 +1,6 @@
 package com.example.wikimonster.data
 
-import com.example.wikimonster.data.model.MonsterData
+import com.example.wikimonster.data.model.monster.MonsterData
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET

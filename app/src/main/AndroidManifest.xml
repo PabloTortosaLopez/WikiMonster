@@ -11,17 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.wikimonster.ui.imc.IMCTabActivity"
-            android:label="@string/title_activity_i_m_c_tab"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity
-            android:name="com.example.wikimonster.ui.imc.historic.HistoricActivity"
+            android:name="com.example.wikimonster.ui.imc.historic.MonstersActivity"
             android:label="@string/title_activity_historic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.wikimonster.ui.imc.IMCActivity"
+            android:name="com.example.wikimonster.ui.imc.MainPagectivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

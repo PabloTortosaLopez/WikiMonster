@@ -12,14 +12,14 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikimonster.R
-import com.example.wikimonster.data.model.MonsterData
+import com.example.wikimonster.data.model.monster.MonsterData
 //import com.example.imcapp.data.model.HistoricData
 import com.example.wikimonster.ui.imc.IMCViewModelFactory
 import kotlinx.android.synthetic.main.historic_tile.view.*
 
-class HistoricActivity : AppCompatActivity() {
+class MonstersActivity : AppCompatActivity() {
 
-    private lateinit var historicViewModel: HistoricViewModel
+    private lateinit var monstersViewModel: MonstersViewModel
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
@@ -31,18 +31,18 @@ class HistoricActivity : AppCompatActivity() {
         findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = title
 
         //Instanciar viewmodel
-        historicViewModel = ViewModelProviders.of(this, IMCViewModelFactory()).get(HistoricViewModel::class.java)
+        monstersViewModel = ViewModelProviders.of(this, IMCViewModelFactory()).get(MonstersViewModel::class.java)
         //Lamada a la funcion del viewmodel para recuperar historics
-        historicViewModel.retrieveHistoric(this)
+        monstersViewModel.retrieveHistoric(this)
 
         //Escuchar los estados del viewmodel
-        historicViewModel.monstersResult.observe(this@HistoricActivity, Observer {
+        monstersViewModel.monstersResult.observe(this@MonstersActivity, Observer {
             val historicState = it ?: return@Observer
 
 
             if (historicState.monsterResult != null) {
                 //Instanciar el adapter para la recyclerview
-                viewAdapter = HistoricAdapter(monsters = historicState.monsterResult) { monster -> historicViewModel.deleteImc(this, monster)}
+                viewAdapter = HistoricAdapter(monsters = historicState.monsterResult) { monster -> monstersViewModel.deleteImc(this, monster)}
                 viewManager = LinearLayoutManager(this)
                 findViewById<RecyclerView>(R.id.recyclerView).apply {
                     setHasFixedSize(true)

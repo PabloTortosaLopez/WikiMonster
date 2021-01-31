@@ -1,4 +1,6 @@
-package com.example.wikimonster.data.model
+package com.example.wikimonster.data.model.monster
+
+import com.example.wikimonster.data.model.LocationHabitats
 
 
 /**
@@ -15,12 +17,3 @@ data class MonsterData(
     val resistances: List<Resistances>?,
     val weaknesses: List<Weaknesses>?
 )
-
-//data class HistoricData(
-  //  val date: String,
-    //val gender: String,
-    //val value: Double,
-    //val state: String,
-    //val height: String,
-    //val weight: String
-//)

@@ -1,4 +1,4 @@
-package com.example.wikimonster.data.model
+package com.example.wikimonster.data.model.monster
 
 data class Weaknesses(
     val element: String,

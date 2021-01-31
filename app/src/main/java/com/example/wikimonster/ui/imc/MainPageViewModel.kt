@@ -6,13 +6,13 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.wikimonster.data.IMCRepository
+import com.example.wikimonster.data.MonsterRepository
 import com.example.wikimonster.data.Result
 
 import com.example.wikimonster.R
-import com.example.wikimonster.ui.imc.historic.HistoricActivity
+import com.example.wikimonster.ui.imc.historic.MonstersActivity
 
-class IMCViewModel(private val imcRepository: IMCRepository) : ViewModel() {
+class MainPageViewModel(private val monsterRepository: MonsterRepository) : ViewModel() {
 
     private val _imcForm = MutableLiveData<IMCFormState>()
     val imcFormState: LiveData<IMCFormState> = _imcForm
@@ -22,18 +22,6 @@ class IMCViewModel(private val imcRepository: IMCRepository) : ViewModel() {
 
     private val _imcHistoric = MutableLiveData<Void>()
     val imcHistoric: LiveData<Void> = _imcHistoric
-
-    // Gestión del resultado del cálculo del IMC
-    fun calculateIMC(username: String, password: String, isMan: Boolean, ctx: Context, save: Boolean) {
-
-        val result = imcRepository.calculateIMC(username, password, isMan, ctx = ctx, save = save)
-
-        if (result is Result.Success) {
-            _imcResult.value = IMCResult(imcCalculated = IMCCalculatedView(imcValue = result.data.value, imcState = result.data.state))
-        } else {
-            _imcResult.value = IMCResult(error = R.string.calculation_failed)
-        }
-    }
 
     // Gestionar si alguno de los campos está vacío
     fun imcDataChanged(weight: String, height: String) {
@@ -46,8 +34,8 @@ class IMCViewModel(private val imcRepository: IMCRepository) : ViewModel() {
         }
     }
 
-    fun historicPressed(context: Context) {
-        val intent = Intent(context, HistoricActivity::class.java)
+    fun monstersPressed(context: Context) {
+        val intent = Intent(context, MonstersActivity::class.java)
         startActivity(context,intent, null)
     }
 
