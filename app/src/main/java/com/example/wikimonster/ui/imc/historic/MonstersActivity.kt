@@ -1,9 +1,14 @@
 package com.example.wikimonster.ui.imc.historic
 
 import android.app.AlertDialog
+import android.content.Context
+import android.opengl.Visibility
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -11,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.wikimonster.R
 import com.example.wikimonster.data.model.monster.MonsterData
 //import com.example.imcapp.data.model.HistoricData
@@ -22,18 +28,33 @@ class MonstersActivity : AppCompatActivity() {
     private lateinit var monstersViewModel: MonstersViewModel
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_historic)
 
         setSupportActionBar(findViewById(R.id.toolbar))
-        findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = title
+        findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = "Monsters"
+
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "New Activity"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         //Instanciar viewmodel
         monstersViewModel = ViewModelProviders.of(this, IMCViewModelFactory()).get(MonstersViewModel::class.java)
+
+        imageView = findViewById(R.id.loadingWidget)
+        Glide.with(applicationContext).asGif()
+            .load(R.drawable.diablos_loading)
+            .into(imageView)
         //Lamada a la funcion del viewmodel para recuperar historics
         monstersViewModel.retrieveHistoric(this)
+
 
         //Escuchar los estados del viewmodel
         monstersViewModel.monstersResult.observe(this@MonstersActivity, Observer {
@@ -41,6 +62,7 @@ class MonstersActivity : AppCompatActivity() {
 
 
             if (historicState.monsterResult != null) {
+                imageView.visibility = View.GONE
                 //Instanciar el adapter para la recyclerview
                 viewAdapter = HistoricAdapter(monsters = historicState.monsterResult) { monster -> monstersViewModel.deleteImc(this, monster)}
                 viewManager = LinearLayoutManager(this)
@@ -56,6 +78,11 @@ class MonstersActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
 

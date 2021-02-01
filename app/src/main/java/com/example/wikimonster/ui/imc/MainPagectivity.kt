@@ -28,11 +28,17 @@ class MainPagectivity : AppCompatActivity() {
         setContentView(R.layout.activity_imc)
 
 
+
         val monsters = findViewById<ImageButton>(R.id.monstersButton)
         val weapons = findViewById<ImageButton>(R.id.weaponsButton)
 
         monsters.setOnClickListener {
             mainPageViewModel.monstersPressed(this)
+        }
+
+        weapons.setOnClickListener {
+            Toast.makeText(applicationContext,
+                "TEST", Toast.LENGTH_SHORT).show()
         }
 
         mainPageViewModel = ViewModelProviders.of(this, IMCViewModelFactory())
