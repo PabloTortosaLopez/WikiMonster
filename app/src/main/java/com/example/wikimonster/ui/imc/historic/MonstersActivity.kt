@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -65,7 +66,8 @@ class MonstersActivity : AppCompatActivity() {
                 imageView.visibility = View.GONE
                 //Instanciar el adapter para la recyclerview
                 viewAdapter = HistoricAdapter(monsters = historicState.monsterResult) { monster -> monstersViewModel.deleteImc(this, monster)}
-                viewManager = LinearLayoutManager(this)
+               // viewManager = LinearLayoutManager(this)
+                viewManager = GridLayoutManager(this,2)
                 findViewById<RecyclerView>(R.id.recyclerView).apply {
                     setHasFixedSize(true)
 

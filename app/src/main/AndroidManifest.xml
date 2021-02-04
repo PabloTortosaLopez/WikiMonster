@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wikimonster">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <application
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="com.example.wikimonster.ui.imc.historic.MonstersActivity"
+            android:name=".ui.imc.ui.main.ScrollingActivityaaaaaa"
+            android:label="@string/title_activity_scrolling_activityaaaaaa"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
+            android:name=".ui.imc.historic.MonstersActivity"
             android:label="@string/title_activity_historic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.wikimonster.ui.imc.MainPagectivity"
+            android:name=".ui.imc.MainPagectivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

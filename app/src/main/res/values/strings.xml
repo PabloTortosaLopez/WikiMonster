@@ -116,4 +116,6 @@
     <string name="alert_positive_info">Los datos se han guardado</string>
     <string name="alert_title_delete">¿Desea eliminar este registro de IMC?</string>
     <string name="monster_faillure">Error al recuperar los datos</string>
+    <string name="title_activity_test_scrolling">ScrollingActivity</string>
+    <string name="title_activity_scrolling_activityaaaaaa">ScrollingActivity</string>
 </resources>
