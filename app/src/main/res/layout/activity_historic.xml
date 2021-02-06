@@ -34,29 +34,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Soy una prueba"
-                    android:layout_centerInParent="true"
-                   android:layout_alignParentRight="true"
-                    android:fitsSystemWindows="true"
-                    android:textAlignment="center"
-                    android:paddingBottom="30dp"
-                    app:layout_collapseMode="parallax"
-                    />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Soy otra prueba"
-                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
                         android:layout_centerInParent="true"
+                        android:layout_alignParentRight="true"
+                       android:layout_marginTop="20dp"
+                        android:layout_marginRight="40dp"
                         android:fitsSystemWindows="true"
+                        android:background="@drawable/shadow_button"
+                        android:text="Order by name"
                         android:textAlignment="center"
-                        android:paddingBottom="30dp"
-                        app:layout_collapseMode="parallax"
-                        />
+                        app:layout_collapseMode="parallax" />
 
                 </RelativeLayout>
 
@@ -66,7 +57,14 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/AppTheme.PopupOverlay"
-                    />
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/caesar_dressing"
+                        android:text="WIKI" />
+                </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
