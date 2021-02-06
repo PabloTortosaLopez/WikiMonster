@@ -39,15 +39,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_centerInParent="true"
                         android:layout_alignParentRight="true"
-                       android:layout_marginTop="20dp"
-                        android:layout_marginRight="40dp"
-                        android:fitsSystemWindows="true"
-                        android:textColor="@color/colorPrimary"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
                         android:background="@drawable/shadow_button"
+                        android:fitsSystemWindows="true"
                         android:text="Order by name"
                         android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
                         app:layout_collapseMode="parallax" />
 
                 </RelativeLayout>
@@ -64,7 +64,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/caesar_dressing"
-                        android:text="WIKI" />
+                        android:text="WIKI"
+                        android:textSize="20sp"/>
                 </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -73,7 +74,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/colorPrimary"
+        android:background="@drawable/gradient_list_background"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <RelativeLayout
             android:layout_width="match_parent"

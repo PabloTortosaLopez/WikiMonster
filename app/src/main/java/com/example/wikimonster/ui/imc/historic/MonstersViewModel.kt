@@ -1,6 +1,7 @@
 package com.example.wikimonster.ui.imc.historic
 
 import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -36,6 +37,8 @@ class MonstersViewModel(private val monsterRepository: MonsterRepository) : View
 
     //Func para eliminar el elemento de bbdd local
     fun deleteImc(ctx: Context, monster: MonsterData) {
+        Toast.makeText(ctx,
+            monster.name, Toast.LENGTH_SHORT).show()
         //TODO: DETALLE VISTA
     }
 }

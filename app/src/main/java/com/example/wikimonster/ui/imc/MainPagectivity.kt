@@ -14,7 +14,7 @@ class MainPagectivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_imc)
+        setContentView(R.layout.activity_main_page)
 
 
 
@@ -27,7 +27,7 @@ class MainPagectivity : AppCompatActivity() {
 
         weapons.setOnClickListener {
             Toast.makeText(applicationContext,
-                "TEST", Toast.LENGTH_SHORT).show()
+                "Not implemented yet", Toast.LENGTH_SHORT).show()
         }
 
         mainPageViewModel = ViewModelProviders.of(this, IMCViewModelFactory())
