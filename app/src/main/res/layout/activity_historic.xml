@@ -44,6 +44,7 @@
                        android:layout_marginTop="20dp"
                         android:layout_marginRight="40dp"
                         android:fitsSystemWindows="true"
+                        android:textColor="@color/colorPrimary"
                         android:background="@drawable/shadow_button"
                         android:text="Order by name"
                         android:textAlignment="center"

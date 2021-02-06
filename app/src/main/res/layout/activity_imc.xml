@@ -10,65 +10,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".ui.imc.MainPagectivity"
-    android:background="@drawable/background_monster">
+    android:background="@color/colorPrimary">
 
     <ImageButton
-        android:id="@+id/monstersButton"
+        android:id="@+id/monsterLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
         android:background="?android:selectableItemBackground"
         android:elevation="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/odogaron_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 
-
-    <ImageButton
-        android:id="@+id/weaponsButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="?android:selectableItemBackground"
-        android:scaleType="centerCrop"
-        android:src="@drawable/longswor_icon_monster"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:fontFamily="@font/caesar_dressing"
-        android:text="Monsters"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/monstersButton"
-        app:layout_constraintStart_toStartOf="@+id/monstersButton"
-        app:layout_constraintTop_toBottomOf="@+id/monstersButton" />
-
-    <TextView
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/caesar_dressing"
-        android:text="Weapons"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/weaponsButton"
-        app:layout_constraintEnd_toEndOf="@+id/weaponsButton"
-        app:layout_constraintStart_toStartOf="@+id/weaponsButton" />
 
     <TextView
         android:id="@+id/textView"
@@ -78,8 +35,37 @@
         android:text="WikiMonster"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/monsters_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/monsters_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shadow_button"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="MONSTERS"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/weapons_button"
+        app:layout_constraintEnd_toEndOf="@+id/weapons_button"
+        app:layout_constraintStart_toStartOf="@+id/weapons_button" />
+
+    <Button
+        android:id="@+id/weapons_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/shadow_button"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="WEAPONS"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
