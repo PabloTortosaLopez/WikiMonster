@@ -7,10 +7,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wikimonster.data.MonsterRepository
-import com.example.wikimonster.data.Result
 
 import com.example.wikimonster.R
-import com.example.wikimonster.ui.imc.historic.MonstersActivity
+import com.example.wikimonster.ui.imc.monsters.MonstersActivity
 
 class MainPageViewModel(private val monsterRepository: MonsterRepository) : ViewModel() {
 

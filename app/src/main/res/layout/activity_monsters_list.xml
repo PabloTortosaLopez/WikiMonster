@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     app:layout_scrollFlags="scroll|snap"
-    tools:context=".ui.imc.historic.MonstersActivity">
+    tools:context=".ui.imc.monsters.MonstersActivity">
 
 
 

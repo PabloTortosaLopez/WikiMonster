@@ -1,4 +1,4 @@
-package com.example.wikimonster.ui.imc.historic
+package com.example.wikimonster.ui.imc.monsters
 
 import android.content.Context
 import android.widget.Toast

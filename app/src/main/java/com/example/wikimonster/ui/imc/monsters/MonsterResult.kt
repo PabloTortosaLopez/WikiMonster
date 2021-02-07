@@ -1,4 +1,4 @@
-package com.example.wikimonster.ui.imc.historic
+package com.example.wikimonster.ui.imc.monsters
 
 import com.example.wikimonster.data.model.monster.MonsterData
 data class MonsterResult(

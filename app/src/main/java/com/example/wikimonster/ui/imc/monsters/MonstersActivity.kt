@@ -1,6 +1,5 @@
-package com.example.wikimonster.ui.imc.historic
+package com.example.wikimonster.ui.imc.monsters
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -61,7 +60,7 @@ class MonstersActivity : AppCompatActivity() {
                 imageView.visibility = View.GONE
                 //Instanciar el adapter para la recyclerview
                 viewAdapter = HistoricAdapter(monsters = historicState.monsterResult) { monster -> monstersViewModel.deleteImc(this, monster)}
-               // viewManager = LinearLayoutManager(this)
+
                 viewManager = GridLayoutManager(this,2)
                 findViewById<RecyclerView>(R.id.recyclerView).apply {
                     setHasFixedSize(true)
