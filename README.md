@@ -1,2 +1,2 @@
 # WikiMonster
-A simple Monster Hunter Wiki with monster info a images
+A simple Monster Hunter Wiki with monster info and images
